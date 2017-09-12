@@ -2,11 +2,12 @@
 declare(strict_types=1);
 
 //http://www.douglaspasqua.com/2015/06/14/testando-banco-de-dados-com-phpunit/
-
+/*
 include_once('AutoLoader.php');
 // Register the directory to your include files
 AutoLoader::registerDirectory('../../core/model.php');
 AutoLoader::registerDirectory('../../models/Categorias.php');
+*/
 include_once __DIR__.'/../../core/model.php';
 include_once __DIR__.'/../../models/Categorias.php';
 
