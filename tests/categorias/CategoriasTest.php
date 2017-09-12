@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-include '../../core/model.php';
-include '../../models/Categorias.php';
+include (dirname(__FILE__).'../../core/model.php');
+include (dirname(__FILE__).'../../models/Categorias.php');
 //http://www.douglaspasqua.com/2015/06/14/testando-banco-de-dados-com-phpunit/
 
 
