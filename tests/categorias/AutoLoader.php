@@ -1,3 +1,4 @@
+<?php
 class AutoLoader {
  
     static private $classNames = array();
@@ -34,3 +35,4 @@ class AutoLoader {
 }
  
 spl_autoload_register(array('AutoLoader', 'loadClass'));
+?>
