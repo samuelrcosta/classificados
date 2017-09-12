@@ -16,13 +16,6 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
 
         $GLOBALS['db'] = $conn;
 
-        $query = $conn->query('SELECT * FROM categorias');
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        $this->assertCount(1, $results);
-        $this->assertEquals('1', $results[0]['id']);
-        $this->assertEquals('Categoria Teste', $results[0]['nome']);
-
         $a = new Anuncios();
 
         $result = $a->getMeusAnuncios(1);
