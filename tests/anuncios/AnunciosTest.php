@@ -39,8 +39,7 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
         if(!$this->conn) {
 
             $db = new PDO('sqlite::classificados:');
-            $db->exec('CREATE TABLE `anuncios_imagens` (`id` int(11) NOT NULL, `url` varchar(100) NOT NULL, `id_anuncios` int(11) NOT NULL');
-            $db->exec('CREATE TABLE `anuncios` (`id` int(11) NOT NULL, `id_usuario` int(11) NOT NULL');
+            $db->exec('CREATE TABLE `anuncios_imagens` (`id` int(11) NOT NULL, `url` varchar(100) NOT NULL, `id_anuncios` int(11) NOT NULL;CREATE TABLE `anuncios` (`id` int(11) NOT NULL, `id_usuario` int(11) NOT NULL');
             $this->conn =  $this->createDefaultDBConnection($db, ':classificados:');
         }
 
