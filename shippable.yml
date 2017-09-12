@@ -7,4 +7,4 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage --bootstrap tests/categorias/AutoLoad.php tests/categorias/
+    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage --bootstrap tests/categorias/AutoLoader.php tests/categorias/
