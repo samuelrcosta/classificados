@@ -35,7 +35,7 @@ class Anuncios extends model{
         $sql->execute(array($id_usuario));
         $array = $sql->fetchAll();
         if($array && count($array)){
-            return $array();
+            return $array;
         }else{
             $array = array();
             return $array;
