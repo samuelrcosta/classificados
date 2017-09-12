@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
+include '../../core/model.php';
 include '../../models/Categorias.php';
-
 //http://www.douglaspasqua.com/2015/06/14/testando-banco-de-dados-com-phpunit/
 
 
@@ -27,8 +27,6 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertCount(1, $results);
         $this->assertEquals('1', $results[0]['id']);
         $this->assertEquals('Categoria Teste', $results[0]['nome']);
-
-
 
         $categorias = new Categorias();
 
