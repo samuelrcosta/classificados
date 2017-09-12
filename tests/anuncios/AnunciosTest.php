@@ -21,7 +21,7 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
         $result = $a->getMeusAnuncios(1);
 
         $this->assertCount(1, $result);
-        $this->assertEquals('anuncio2', $result[0]['url']);
+        $this->assertEquals('anuncio1', $result[0]['url']);
         $this->assertEquals('2', $result[0]['id']);
         $this->assertEquals('1', $result[0]['id_usuario']);
     }
