@@ -1,0 +1,10 @@
+<dataset>
+    <table name="categorias">
+        <column>id</column>
+        <column>nome</column>
+        <row>
+            <value>1</value>
+            <value>Categoria Teste</value>
+        </row>
+    </table>
+</dataset>
