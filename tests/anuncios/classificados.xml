@@ -1,0 +1,29 @@
+<dataset>
+    <table name="anuncios_imagens">
+        <column>id</column>
+        <column>url</column>
+        <column>id_anuncios</column>
+        <row>
+            <value>1</value>
+            <value>anuncio1</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>anuncio2</value>
+            <value>1</value>
+        </row>
+    </table>
+    <table name="anuncios">
+        <column>id</column>
+        <column>id_usuario</column>
+        <row>
+            <value>1</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>1</value>
+        </row>
+    </table>
+</dataset>

@@ -33,12 +33,13 @@ class Anuncios extends model{
         $array = array();
         $sql = $this->db->prepare("SELECT *, (SELECT anuncios_imagens.url FROM anuncios_imagens WHERE anuncios_imagens.id_anuncios = anuncios.id limit 1) as url FROM anuncios WHERE id_usuario = ?");
         $sql->execute(array($id_usuario));
-
-        if($sql ->rowCount() > 0 ){
-            $array = $sql->fetchAll();
+        $array = $sql->fetchAll();
+        if($array && count($array)){
+            return $array();
+        }else{
+            $array = array();
+            return $array;
         }
-
-        return $array;
     }
 
     public function getUltimosAnuncios($page, $max, $filtros){
