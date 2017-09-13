@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 //http://www.douglaspasqua.com/2015/06/14/testando-banco-de-dados-com-phpunit/
+//http://beagile.biz/a-simple-phpunit-xml-configuration-example/
 
 include_once __DIR__.'/../../core/model.php';
 include_once __DIR__.'/../../models/Categorias.php';
@@ -9,7 +10,10 @@ include_once __DIR__.'/../../models/Categorias.php';
 final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
 
     private $conn = null;
-
+    
+    /**
+     * @covers Categorias::getLista
+    */
     public function testGetLista(){
 
         $conn = $this->getConnection()->getConnection();
@@ -36,7 +40,9 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertEquals('Categoria Teste', $result[0]['nome']);
     }
 
-
+    /**
+     * @coversNothing
+     */
     public function getConnection()
     {
         if(!$this->conn) {
@@ -48,7 +54,10 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
 
         return $this->conn;
     }
-
+    
+    /**
+     * @coversNothing
+     */    
     public function getDataSet()
     {
         return $this->createXMLDataSet(__DIR__."/classificados.xml");

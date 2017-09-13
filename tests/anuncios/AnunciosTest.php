@@ -26,7 +26,9 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertEquals('1', $result[0]['id_usuario']);
     }
 
-
+    /**
+     * @coversNothing
+     */
     public function getConnection()
     {
         if(!$this->conn) {
@@ -38,7 +40,10 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
 
         return $this->conn;
     }
-
+    
+    /**
+     * @coversNothing
+     */
     public function getDataSet()
     {
         return $this->createXMLDataSet(__DIR__."/classificados.xml");
