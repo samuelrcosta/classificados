@@ -8,4 +8,4 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - phpunit --configuration="phpunit.xml"
-    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/
+    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-clover shippable/codecoverage.xml tests/
