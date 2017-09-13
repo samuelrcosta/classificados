@@ -34,7 +34,8 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         $categorias = new Categorias();
 
         $result = $categorias->getLista();
-
+        
+        $this->assertInstanceOf('categorias', new Categorias);
         $this->assertCount(1, $result);
         $this->assertEquals('1', $result[0]['id']);
         $this->assertEquals('Categoria Teste', $result[0]['nome']);
