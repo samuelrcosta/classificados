@@ -28,7 +28,7 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertEquals('1', $result[0]['id']);
         $this->assertEquals('Categoria Teste', $result[0]['nome']);
         
-        $conn = query("DELETE FROM categorias");
+        $sql = $conn->query("DELETE FROM categorias");
         $result2 = $categorias->getLista();
         $this->assertCount(0, $result);
         
