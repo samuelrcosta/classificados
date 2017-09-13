@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit>
-    <logging>
-      <log type="coverage-clover" target="shippable/coverage.xml"/>
-    </logging>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
     <testsuites>
-        <testsuite name="AllTests">
-        <directory>.</directory>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">/models</directory>
+            <directory suffix=".php">./models</directory>
+            <exclude>
+                <file>/routers.php</file>
+            </exclude>
         </whitelist>
     </filter>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+    </php>
 </phpunit>
