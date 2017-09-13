@@ -12,6 +12,18 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
     private $conn = null;
     
     /**
+     * @covers Categorias
+    */
+    public function testInstanceOf(){
+        $conn = $this->getConnection()->getConnection();
+        $GLOBALS['db'] = $conn;
+        
+        $categorias = new Categorias();
+        $this->assertInstanceOf('categorias', new Categorias);
+    }
+    
+    
+    /**
      * @covers Categorias::getLista
     */
     public function testGetLista(){
@@ -20,22 +32,10 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
 
         $GLOBALS['db'] = $conn;
 
-        // realiza operacoes com banco de dados
-        // .....
-
-        // verificando o status do banco.
-        $query = $conn->query('SELECT * FROM categorias');
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        $this->assertCount(1, $results);
-        $this->assertEquals('1', $results[0]['id']);
-        $this->assertEquals('Categoria Teste', $results[0]['nome']);
-
         $categorias = new Categorias();
 
         $result = $categorias->getLista();
         
-        $this->assertInstanceOf('categorias', new Categorias);
         $this->assertCount(1, $result);
         $this->assertEquals('1', $result[0]['id']);
         $this->assertEquals('Categoria Teste', $result[0]['nome']);
