@@ -30,7 +30,7 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         
         $sql = $conn->query("DELETE FROM categorias");
         $result2 = $categorias->getLista();
-        $this->assertCount(0, $result);
+        $this->assertCount(0, $result2);
         
     }
 
