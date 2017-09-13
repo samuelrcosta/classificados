@@ -29,7 +29,7 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
         //Teste do else
         $sql = $conn->query("DELETE FROM anuncios WHERE id_usuario = 1");
         $result2 = $a->getMeusAnuncios(1);
-        $this->assertCount(0, $result);
+        $this->assertCount(0, $result2);
     }
 
     /**
