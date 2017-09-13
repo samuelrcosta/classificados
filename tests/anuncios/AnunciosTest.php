@@ -25,6 +25,11 @@ final class AnunciosTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertEquals('anuncio1', $result[0]['url']);
         $this->assertEquals('2', $result[0]['id']);
         $this->assertEquals('1', $result[0]['id_usuario']);
+        
+        //Teste do else
+        $sql = $conn->query("DELETE FROM anuncios WHERE id_usuario = 1");
+        $result2 = $a->getMeusAnuncios(1);
+        $this->assertCount(0, $result);
     }
 
     /**
