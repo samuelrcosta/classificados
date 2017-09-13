@@ -6,8 +6,9 @@ class Categorias extends model{
         $sql = $sql->fetchAll();
         if($sql && count($sql)){
             return $sql;
+        }else{
+            return $array;
         }
-        return $array;
     }
 }
 ?>

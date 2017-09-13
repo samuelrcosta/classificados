@@ -12,18 +12,6 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
     private $conn = null;
     
     /**
-     * @covers Categorias
-    */
-    public function testInstanceOf(){
-        $conn = $this->getConnection()->getConnection();
-        $GLOBALS['db'] = $conn;
-        
-        $categorias = new Categorias();
-        $this->assertInstanceOf('categorias', new Categorias);
-    }
-    
-    
-    /**
      * @covers Categorias::getLista
     */
     public function testGetLista(){
@@ -39,6 +27,11 @@ final class CategoriasTest extends PHPUnit_Extensions_Database_TestCase{
         $this->assertCount(1, $result);
         $this->assertEquals('1', $result[0]['id']);
         $this->assertEquals('Categoria Teste', $result[0]['nome']);
+        
+        $conn = query("DELETE FROM categorias");
+        $result2 = $categorias->getLista();
+        $this->assertCount(0, $result);
+        
     }
 
     /**
